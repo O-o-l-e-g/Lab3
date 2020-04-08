@@ -6,7 +6,7 @@ function User(name) {
 User.prototype =
  {
     getName:  function() { return this.name;}
-}
+};
 
 const me = new User('Rex');
 
