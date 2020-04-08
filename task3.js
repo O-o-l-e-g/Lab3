@@ -16,12 +16,27 @@ const object3 = {
 // Реализуйте функцию isEquivalent
 
 function isEquivalent(object1, object2) {
-    if (object1.name !== object2.name) {
-        return false;
-    }
-    return object1.weight === object2.weight;
+    let array1 = [];
+    let array2 = [];
 
+    for (let counter in object1) {
+        array1.push(object1[counter]);
+    }
+
+    for (let counter in object2) {
+        array2.push(object2[counter]);
+    }
+
+    if (array1.length !== array2.length) return false;
+
+    for (let counter = 0; counter < array1.length; counter++) {
+        if(array1[counter] !== array2[counter]) return false
+    }
+
+    return true
 }
+
+// изменить, добавить цикл
 
 console.log(isEquivalent(object1, object2)); // true
 console.log(isEquivalent(object1, object3)); // false
